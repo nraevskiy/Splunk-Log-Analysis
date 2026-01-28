@@ -1,1 +1,7 @@
+# Splunk Query: Detect Failed SSH Logins for 'root' User
+# ------------------------------------------------------
+# This SPL (Search Processing Language) query filters SSH login failures
+# from the secure log file. It searches for events where the login attempt
+# failed and was targeting the 'root' account.
 
+index="main" host=mailsv source="tutorialdata.zip:./mailsv/secure.log" sourcetype="secure-2" fail* root
